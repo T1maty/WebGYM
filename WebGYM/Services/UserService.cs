@@ -19,16 +19,26 @@ namespace WebGYM.Services
             return result.Entity;
         }
 
-        public User DeleteUser(int id)
+        public bool DeleteUser(int id)
         {
             var filteredData = _dbContext.Users.Where(x => x.UserId == id).FirstOrDefault();
             var result = _dbContext.Remove(filteredData);
             _dbContext.SaveChanges();
-            return result.Entity;
+
+            return result != null ? true : false;
+
+            if (filteredData == null)
+            {
+                return NotFound();
+            }
+            
 
         }
 
-        
+        private bool NotFound()
+        {
+            throw new NotImplementedException();
+        }
 
         public User UpdateUser(User product)
         {

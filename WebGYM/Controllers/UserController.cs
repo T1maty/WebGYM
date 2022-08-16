@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using WebGYM.Models;
 using WebGYM.Services.Interfaces;
@@ -24,6 +25,8 @@ namespace WebGYM.Controllers
         {
             return userService.UpdateUser(user);
         }
+
         
+
     }
 }
