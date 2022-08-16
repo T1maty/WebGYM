@@ -33,7 +33,7 @@ namespace WebGYM.Services
                     };
                 }
 
-                var filteredData = _dbContext.Users.Where(x => x.UserId == id).FirstOrDefault();
+                var filteredData = _dbContext.Users.Where(x => x.Id == id).FirstOrDefault();
                 if (filteredData == null)
                 {
                     return new Result
