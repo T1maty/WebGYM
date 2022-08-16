@@ -1,4 +1,5 @@
-﻿using WebGYM.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using WebGYM.Data;
 using WebGYM.Models;
 using WebGYM.Services.Interfaces;
 
@@ -19,25 +20,49 @@ namespace WebGYM.Services
             return result.Entity;
         }
 
-        public bool DeleteUser(int id)
+        public Result DeleteUser(int? id)
         {
-            var filteredData = _dbContext.Users.Where(x => x.UserId == id).FirstOrDefault();
-            var result = _dbContext.Remove(filteredData);
-            _dbContext.SaveChanges();
-
-            return result != null ? true : false;
-
-            if (filteredData == null)
+            try
             {
-                return NotFound();
+                if (id == null)
+                {
+                    return new Result
+                    {
+                        StatusCode = System.Net.HttpStatusCode.BadRequest,
+                        ErrorMessage = "Id was not provided"
+                    };
+                }
+
+                var filteredData = _dbContext.Users.Where(x => x.UserId == id).FirstOrDefault();
+                if (filteredData == null)
+                {
+                    return new Result
+                    {
+                        Id = id,
+                        StatusCode = System.Net.HttpStatusCode.NotFound,
+                        ErrorMessage = "User with specified Id was not found"
+                    };
+                }
+
+                var result = _dbContext.Remove(filteredData);
+                _dbContext.SaveChanges();
+
+                return new Result
+                {
+                    Id = result.Entity?.Id,
+                    StatusCode = System.Net.HttpStatusCode.OK,
+                    CustomObject = result.Entity
+                };
+            } 
+            catch (Exception ex)
+            {
+                return new Result
+                {
+                    Id = id,
+                    StatusCode = System.Net.HttpStatusCode.InternalServerError,
+                    ErrorMessage = ex.Message
+                };
             }
-            
-
-        }
-
-        private bool NotFound()
-        {
-            throw new NotImplementedException();
         }
 
         public User UpdateUser(User product)

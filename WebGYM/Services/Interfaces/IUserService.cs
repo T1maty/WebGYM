@@ -6,6 +6,6 @@ namespace WebGYM.Services.Interfaces
     {
         public User AddUser(User product);
         public User UpdateUser(User product);
-        public  bool DeleteUser(int id); 
+        public Result DeleteUser(int? id); 
     }
 }
