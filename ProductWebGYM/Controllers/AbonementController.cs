@@ -24,6 +24,22 @@ namespace ProductWebGYM.Controllers
         {
             return _abonementService.UpdateAbonement(abonement);
         }
-        
+
+        /// <summary>
+        /// Deletes user by specified id
+        /// </summary>
+        /// <param name="id">User id</param>
+        /// <returns>Result of deletion</returns>
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult Delete(int? id)
+        {
+            var result = _abonementService.DeleteAbonement(id);
+            return StatusCode((int)result.StatusCode, result);
+        }
+
     }
 }
