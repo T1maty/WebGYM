@@ -1,8 +1,9 @@
-﻿namespace ProductWebGYM.Models
+﻿using WebGYM.Shared.Models;
+
+namespace ProductWebGYM.Models
 {
-    public class Abonement
+    public class Abonement : ServiceObject
     {
-        public int Id { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
         public string? PhoneNumber { get; set; }

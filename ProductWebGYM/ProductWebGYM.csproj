@@ -24,4 +24,8 @@
     <ProjectReference Include="..\WebGYM.Shared\WebGYM.Shared.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
