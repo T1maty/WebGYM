@@ -111,6 +111,7 @@ namespace WebGYM.Shared.Services
                         return validationResult;
                 }
 
+                entity.Id = null;
                 var result = _context.Set<T>().Add(entity);
 
                 _context.SaveChanges();
