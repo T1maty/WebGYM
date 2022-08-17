@@ -1,4 +1,5 @@
 ﻿using WebGYM.Models;
+using WebGYM.Shared.Models;
 
 namespace WebGYM.Services.Interfaces
 {

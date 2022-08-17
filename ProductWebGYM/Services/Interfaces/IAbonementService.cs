@@ -1,4 +1,5 @@
 ﻿using ProductWebGYM.Models;
+using WebGYM.Shared.Models;
 
 namespace ProductWebGYM.Services.Interfaces
 {
@@ -6,7 +7,6 @@ namespace ProductWebGYM.Services.Interfaces
     {
         public Abonement AddAbonement(Abonement product);
         public Abonement UpdateAbonement(Abonement product);
-        public Result DeleteAbonement(int id);
-        object DeleteAbonement(int? id);
+        public Result DeleteAbonement(int? id);
     }
 }

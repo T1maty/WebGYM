@@ -2,6 +2,7 @@
 using WebGYM.Data;
 using WebGYM.Models;
 using WebGYM.Services.Interfaces;
+using WebGYM.Shared.Models;
 
 namespace WebGYM.Services
 {

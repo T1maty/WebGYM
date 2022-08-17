@@ -1,6 +1,7 @@
 ﻿using ProductWebGYM.Data;
 using ProductWebGYM.Models;
 using ProductWebGYM.Services.Interfaces;
+using WebGYM.Shared.Models;
 
 namespace ProductWebGYM.Services
 {
@@ -19,11 +20,11 @@ namespace ProductWebGYM.Services
             return result.Entity;
         }
 
-        public Result DeleteAbonement(int id)
+        public Result DeleteAbonement(int? id)
         {
             try
             {
-                if (id==null)
+                if (id == null)
                 {
                     return new Result
                     {
@@ -32,13 +33,13 @@ namespace ProductWebGYM.Services
                     };
                 }
                 var filteredData = _dbContext.Abonements.Where(x => x.Id == id).FirstOrDefault();
-                if (filteredData ==null)
+                if (filteredData == null)
                 {
                     return new Result
                     {
                         Id = id,
                         StatusCode = System.Net.HttpStatusCode.NotFound,
-                        ErrorMessage = "User with specified Id was not found"
+                        ErrorMessage = "Abonement with specified Id was not found"
                     };
                 }
                 var result = _dbContext.Remove(filteredData);

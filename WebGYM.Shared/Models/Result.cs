@@ -1,8 +1,8 @@
 ﻿using System.Net;
 
-namespace WebGYM.Models
+namespace WebGYM.Shared.Models
 {
-    public struct Result
+    public readonly struct Result
     {
         public int? Id { get; init; }
         public HttpStatusCode StatusCode { get; init; }
