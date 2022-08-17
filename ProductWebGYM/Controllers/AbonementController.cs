@@ -9,10 +9,15 @@ namespace ProductWebGYM.Controllers
     public class AbonementController : ControllerBase
     {
         private readonly IGenericService _service;
-        public AbonementController(IGenericService service)
+        private readonly ILogger<AbonementController> _logger;
+
+        
+        public AbonementController(IGenericService service,ILogger<AbonementController>logger)
         {
             _service = service;
+            _logger = logger;
         }
+        
 
         /// <summary>
         /// Gets the Abonement by id
@@ -40,6 +45,7 @@ namespace ProductWebGYM.Controllers
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
         public ActionResult Create(Abonement user)
         {
+            _logger.LogInformation("Product excuting...");
             var result = _service.Create(user);
             return StatusCode((int)result.StatusCode, result);
         }

@@ -1,8 +1,14 @@
 using Microsoft.EntityFrameworkCore;
 using ProductWebGYM.Data;
+using Serilog;
 using WebGYM.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context,config)=>
+{ 
+    config.WriteTo.Console();
+});
 
 
 builder.Services.AddDbContext<DbContextClass>(options =>
