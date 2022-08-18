@@ -12,7 +12,7 @@ namespace WebGYM.Shared.Services
         public Result<T> Create<T>(T entity, Func<T, Result<T>>? validationLogic = null) where T : ServiceObject;
         public Result<T> Update<T>(T entity, Func<T, Result<T>>? validationLogic = null) where T : ServiceObject;
         public Result<T> Delete<T>(int? id) where T : ServiceObject;
-        public IQueryable<T> ListQuery<T>(int? limit = ConstantsBucket.GET_LIMIT, int? skip = null, Expression<Func<T, bool>>? filter = null) where T : ServiceObject;   
+        public IQueryable<T> ListQuery<T>(int? limit = ConstantsBucket.GET_LIMIT, int? skip = null, Expression<Func<T, bool>>? filter = null) where T : ServiceObject;
     }
 
     public class GenericService : IGenericService
@@ -20,6 +20,8 @@ namespace WebGYM.Shared.Services
         private readonly DbContext _context;
 
         public GenericService(DbContext context) => _context = context;
+
+        public DbSet<T> Set<T>() where T : ServiceObject => _context.Set<T>();
 
         public IQueryable<T> ListQuery<T>(int? limit = ConstantsBucket.GET_LIMIT, int? skip = null, Expression<Func<T, bool>>? filter = null) where T : ServiceObject
         {
