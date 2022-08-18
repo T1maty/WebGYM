@@ -7,6 +7,7 @@ namespace WebGYM.Shared.Services
 {
     public interface IGenericService
     {
+        public DbSet<T> Set<T>() where T : ServiceObject;
         public Result<List<T>> List<T>(int? limit = ConstantsBucket.GET_LIMIT, int? skip = null, Expression<Func<T, bool>>? filter = null) where T : ServiceObject;
         public Result<T> Get<T>(int? id) where T : ServiceObject;
         public Result<T> Create<T>(T entity, Func<T, Result<T>>? validationLogic = null) where T : ServiceObject;
