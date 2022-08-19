@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using ProductWebGYM.Models;
 using WebGYM.Shared.Services;
 
@@ -10,12 +11,14 @@ namespace ProductWebGYM.Controllers
     {
         private readonly IGenericService _service;
         private readonly ILogger<AbonementController> _logger;
+        private readonly IDistributedCache _cache;
 
         
-        public AbonementController(IGenericService service,ILogger<AbonementController>logger)
+        public AbonementController(IGenericService service,ILogger<AbonementController>logger,IDistributedCache cache)
         {
             _service = service;
             _logger = logger;
+            _cache = cache; 
         }
         
 
