@@ -9,15 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Services\**" />
-    <Content Remove="Services\**" />
-    <EmbeddedResource Remove="Services\**" />
-    <None Remove="Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.8" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.8" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="6.0.8">
       <PrivateAssets>all</PrivateAssets>
@@ -41,15 +35,12 @@
     <ProjectReference Include="..\WebGYM.Shared\WebGYM.Shared.csproj" />
   </ItemGroup>
 
-<<<<<<< HEAD
   <ItemGroup>
     <Folder Include="Services\" />
   </ItemGroup>
 	
 	<ItemGroup>
-		<InternalsVisibleTo Include="$(AssemblyName).Test"/>
+		<InternalsVisibleTo Include="$(AssemblyName).Test" />
 		</ItemGroup>
 
-=======
->>>>>>> 799ea9ac91365610227311faf4275a97a5f996ed
 </Project>

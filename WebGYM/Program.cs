@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebGYM.Data;
+using WebGYM.Models;
 using WebGYM.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -15,6 +16,13 @@ ConfigurationManager configuration = builder.Configuration;
 // For Entity Framework
 builder.Services.AddDbContext<DbContextClass>(options =>
  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddSignalR();
+builder.Services.AddCors(options =>
+{
+options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed((hosts) => true));
+
+});
 
 builder.Services.AddScoped<DbContext, DbContextClass>();
 builder.Services.AddScoped<IGenericService, GenericService>();
@@ -66,6 +74,16 @@ app.UseHttpsRedirection();
 // Authentication & Authorization
 app.UseAuthentication();
 app.UseAuthorization();
+
+app.UseCors("CORSPolicy");
+app.UseRouting();
+app.UseAuthorization();
+
+app.UseEndpoints(endpoints => {
+    endpoints.MapControllers();
+    endpoints.MapHub<MessageHub>("/offers");
+});
+
 
 app.MapControllers();
 

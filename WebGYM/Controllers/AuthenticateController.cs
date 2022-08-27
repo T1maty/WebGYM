@@ -6,6 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using WebGYM.Models;
+using WebGYM.Models.Interfaces;
 
 namespace WebGYM.Controllers
 {
@@ -16,12 +17,14 @@ namespace WebGYM.Controllers
         private readonly UserManager<IdentityUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IConfiguration _configuration;
+        private readonly IMessageHubClient _messageclient;
 
         public AuthenticateController(UserManager<IdentityUser> userManager,
-            IConfiguration configuration)
+            IConfiguration configuration, IMessageHubClient messageHub)
         {
             _userManager = userManager;
             _configuration = configuration;
+            _messageclient = messageHub;
 
         }
         //This is Post Request and login user
