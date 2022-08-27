@@ -16,6 +16,5 @@ namespace WebGYM.Data
         {
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
         }
-        public DbSet<UserDto> UserDtos { get; set; }
     }
 }

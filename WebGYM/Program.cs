@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using WebGYM.Data;
+using WebGYM.Shared.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigurationManager configuration = builder.Configuration;
@@ -14,6 +15,9 @@ ConfigurationManager configuration = builder.Configuration;
 // For Entity Framework
 builder.Services.AddDbContext<DbContextClass>(options =>
  options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddScoped<DbContext, DbContextClass>();
+builder.Services.AddScoped<IGenericService, GenericService>();
 
 // For Identity
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
