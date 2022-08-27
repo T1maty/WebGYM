@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProductWebGYM", "ProductWeb
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot API Gateway", "Ocelot API Gateway\Ocelot API Gateway.csproj", "{A5F668B7-3934-4D64-93DC-4916202914C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGYM.Shared", "WebGYM.Shared\WebGYM.Shared.csproj", "{AE819127-6EB7-47C3-AB88-6BF2383385D8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Shared", "WebGYM.Shared\WebGYM.Shared.csproj", "{AE819127-6EB7-47C3-AB88-6BF2383385D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGYMTest", "WebGYMTest\WebGYMTest.csproj", "{994827C5-AB3D-444D-8EDC-E25263726222}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{994827C5-AB3D-444D-8EDC-E25263726222}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{994827C5-AB3D-444D-8EDC-E25263726222}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{994827C5-AB3D-444D-8EDC-E25263726222}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{994827C5-AB3D-444D-8EDC-E25263726222}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
