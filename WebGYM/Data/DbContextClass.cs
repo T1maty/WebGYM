@@ -6,14 +6,16 @@ namespace WebGYM.Data
     public class DbContextClass : DbContext
     {
         protected readonly IConfiguration Configuration;
-        public DbContextClass(IConfiguration configuration)
+        public DbContextClass(DbContextOptions<DbContextClass> options) :
+             base(options)
         {
-            Configuration = configuration;
+
         }
-        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+            modelBuilder.UseSerialColumns();
         }
+
         public DbSet<User> Users { get; set; }
     }
 }
