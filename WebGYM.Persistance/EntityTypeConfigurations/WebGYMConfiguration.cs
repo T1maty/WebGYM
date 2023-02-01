@@ -12,6 +12,11 @@ namespace WebGYM.Persistance.EntityTypeConfigurations
 {
     public class WebGYMConfiguration : IEntityTypeConfiguration<User>
     {
-
+        public void Configure(EntityTypeBuilder<User> builder)
+        {
+            builder.HasKey(n => n.UserId);
+            builder.HasIndex(n => n.UserId).IsUnique();
+        }
+        
     }
 }
