@@ -1,4 +1,6 @@
-﻿namespace WebGYM.Domain
+﻿using WebGYM.Models;
+
+namespace WebGYM.Domain
 {
     public class User : BaseObject
     {

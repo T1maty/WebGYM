@@ -2,6 +2,6 @@
 {
     public class BaseObject
     {
-        public int Id { get; set; }
+        public Guid Id { get; set; }
     }
 }
