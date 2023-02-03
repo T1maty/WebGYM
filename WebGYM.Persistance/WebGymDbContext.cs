@@ -9,12 +9,12 @@ using WebGYM.Domain;
 
 namespace WebGYM.Persistance
 {
-    public class WebGymDbContext : DbContext
+    public class DbContextClass : DbContext
     {
         public DbSet<User> Users { get; set; }
 
         protected readonly IConfiguration Configuration;
-        public WebGymDbContext(DbContextOptions<WebGymDbContext> options) :
+        public DbContextClass(DbContextOptions<DbContextClass> options) :
              base(options)
         {
 

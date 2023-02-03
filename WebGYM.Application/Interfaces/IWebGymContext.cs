@@ -8,7 +8,7 @@ using WebGYM.Domain;
 
 namespace WebGYM.Application.Interfaces
 {
-    public interface IWebGymDbContext
+    public interface IWebGymContext
     {
         DbSet<User> Users { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);

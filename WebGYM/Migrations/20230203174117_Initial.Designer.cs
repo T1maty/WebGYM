@@ -11,8 +11,8 @@ using WebGYM.Data;
 namespace WebGYM.Migrations
 {
     [DbContext(typeof(DbContextClass))]
-    [Migration("20230128161025_InitialDatabase")]
-    partial class InitialDatabase
+    [Migration("20230203174117_Initial")]
+    partial class Initial
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,15 +33,12 @@ namespace WebGYM.Migrations
                     NpgsqlPropertyBuilderExtensions.UseSerialColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Email")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("FirstName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("LastName")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<int>("UserId")

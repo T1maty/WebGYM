@@ -21,6 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebGYM.Application\WebGYM.Application.csproj" />
+    <ProjectReference Include="..\WebGYM.Domain\WebGYM.Domain.csproj" />
   </ItemGroup>
 
 </Project>

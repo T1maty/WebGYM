@@ -14,9 +14,9 @@ namespace WebGYM.Application.Gym.Commands.CreateGym
         :IRequestHandler<CreateGymCommand, Guid >
        
     {
-        private readonly IWebGymDbContext _webGymDbContext;
+        private readonly IWebGymContext _webGymDbContext;
 
-        public CreateGymCommandHandler(IWebGymDbContext webGymDbContext)
+        public CreateGymCommandHandler(IWebGymContext webGymDbContext)
         {
             _webGymDbContext = webGymDbContext;
         }

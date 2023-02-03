@@ -9,6 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.2">
       <PrivateAssets>all</PrivateAssets>
@@ -24,7 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebGYM.Shared\WebGYM.Shared.csproj" />
+    <ProjectReference Include="..\WebGYM.Application\WebGYM.Application.csproj" />
+    <ProjectReference Include="..\WebGYM.Persistance\WebGYM.Persistance.csproj" />
   </ItemGroup>
 
 </Project>

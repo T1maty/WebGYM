@@ -17,11 +17,11 @@ namespace WebGYM.Persistance
             services, IConfiguration configuration)
         {
             var connectionString = configuration["DefaultConnection"];
-            services.AddDbContext<WebGymDbContext>(options =>
+            services.AddDbContext<DbContextClass>(options =>
             {
                 options.UseNpgsql(connectionString);
             });
-            services.AddScoped<IWebGymDbContext>(provider => (IWebGymDbContext)provider.GetService<WebGymDbContext>());
+            services.AddScoped<IWebGymContext>(provider => (IWebGymContext)provider.GetService<DbContextClass>());
             return services;
 
         }

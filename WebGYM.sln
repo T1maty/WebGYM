@@ -7,8 +7,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM", "WebGYM\WebGYM.csp
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot API Gateway", "Ocelot API Gateway\Ocelot API Gateway.csproj", "{A5F668B7-3934-4D64-93DC-4916202914C3}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Shared", "WebGYM.Shared\WebGYM.Shared.csproj", "{AE819127-6EB7-47C3-AB88-6BF2383385D8}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{389A5238-B228-4E47-8F66-9EB818F5648D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{85995DE4-7412-4A68-8D5A-7F4898F68BED}"
@@ -17,11 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentatio
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C2501590-A9EF-473C-A7E9-716D423028F6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGYM.Domain", "WebGYM.Domain\WebGYM.Domain.csproj", "{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Domain", "WebGYM.Domain\WebGYM.Domain.csproj", "{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGYM.Application", "WebGYM.Application\WebGYM.Application.csproj", "{5A596585-C80E-43F2-9D63-8D8FD134148A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Application", "WebGYM.Application\WebGYM.Application.csproj", "{5A596585-C80E-43F2-9D63-8D8FD134148A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGYM.Persistance", "WebGYM.Persistance\WebGYM.Persistance.csproj", "{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Persistance", "WebGYM.Persistance\WebGYM.Persistance.csproj", "{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,10 +35,6 @@ Global
 		{A5F668B7-3934-4D64-93DC-4916202914C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5F668B7-3934-4D64-93DC-4916202914C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5F668B7-3934-4D64-93DC-4916202914C3}.Release|Any CPU.Build.0 = Release|Any CPU
-		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AE819127-6EB7-47C3-AB88-6BF2383385D8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
