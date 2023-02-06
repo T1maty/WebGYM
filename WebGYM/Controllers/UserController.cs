@@ -52,7 +52,7 @@ namespace WebGYM.Controllers
         {
             return userService.UpdateUser(user);
         }
-
+        //test
         /// <summary>
         /// Deletes user by specified id
         /// </summary>
