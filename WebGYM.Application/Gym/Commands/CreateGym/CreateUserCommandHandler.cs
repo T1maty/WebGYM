@@ -10,18 +10,18 @@ using WebGYM.Domain;
 namespace WebGYM.Application.Gym.Commands.CreateGym
 {
    
-    public class CreateGymCommandHandler
-        :IRequestHandler<CreateGymCommand, Guid >
+    public class CreateUserCommandHandler
+        :IRequestHandler<CreateUserCommand, Guid >
        
     {
         private readonly IWebGymContext _webGymDbContext;
 
-        public CreateGymCommandHandler(IWebGymContext webGymDbContext)
+        public CreateUserCommandHandler(IWebGymContext webGymDbContext)
         {
             _webGymDbContext = webGymDbContext;
         }
 
-        public async Task<Guid> Handle(CreateGymCommand request,
+        public async Task<Guid> Handle(CreateUserCommand request,
             CancellationToken cancellationToken)
         {
             var user = new User
