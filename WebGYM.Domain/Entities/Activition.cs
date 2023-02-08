@@ -1,6 +1,8 @@
-﻿namespace WebGYM.Models
+﻿using WebGYM.Domain.Entities;
+
+namespace WebGYM.Models
 {
-    public class Activities : BaseObject
+    public class Activition : BaseEntity
     {
         public string? Category { get; set; }
         public TimeSpan Duration { get; set; }

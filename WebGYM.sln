@@ -21,8 +21,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Application", "WebGY
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM.Persistance", "WebGYM.Persistance\WebGYM.Persistance.csproj", "{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserTest", "UserTest\UserTest.csproj", "{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,10 +47,6 @@ Global
 		{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,7 +56,6 @@ Global
 		{4C25E2FF-FA1A-45FE-AFEF-8F2DC2767EB2} = {389A5238-B228-4E47-8F66-9EB818F5648D}
 		{5A596585-C80E-43F2-9D63-8D8FD134148A} = {389A5238-B228-4E47-8F66-9EB818F5648D}
 		{F74036C7-AFB3-49BE-A4DA-7893DA9AE9BB} = {85995DE4-7412-4A68-8D5A-7F4898F68BED}
-		{D9D4378C-8BA7-4DDA-AA58-BAB7D06D903A} = {C2501590-A9EF-473C-A7E9-716D423028F6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F30CF194-1B2E-4D81-A37F-19BCDBCA79C4}

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebGYM.Application.Gym.Commands.CreateGym
+namespace WebGYM.Application.Gym.Commands.User.CreateUser
 {
-    public class CreateUserCommand : IRequest<Guid>
+    public class CreateUserCommand : IRequest
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

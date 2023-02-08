@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 using WebGYM.Application.Interfaces;
 using WebGYM.Domain;
 
-namespace WebGYM.Application.Gym.Commands.CreateGym
+namespace WebGYM.Application.Gym.Commands.User.CreateUser
 {
-   
+
     public class CreateUserCommandHandler
-        :IRequestHandler<CreateUserCommand, Guid >
-       
+        : IRequestHandler<CreateUserCommand, Guid>
+
     {
         private readonly IWebGymContext _webGymDbContext;
 
@@ -30,7 +30,7 @@ namespace WebGYM.Application.Gym.Commands.CreateGym
                 Email = request.Email,
                 FirstName = request.FirstName,
                 LastName = request.LastName
-               
+
             };
 
             await _webGymDbContext.Users.AddAsync(user, cancellationToken);
@@ -39,6 +39,6 @@ namespace WebGYM.Application.Gym.Commands.CreateGym
             return user.Id;
         }
     }
-    
-    
+
+
 }

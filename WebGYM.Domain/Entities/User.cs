@@ -1,0 +1,12 @@
+﻿using WebGYM.Domain.Entities;
+using WebGYM.Models;
+
+namespace WebGYM.Domain
+{
+    public class User : BaseEntity
+    {
+        public  string? Email { get; set; }
+ 
+        
+    }
+}
