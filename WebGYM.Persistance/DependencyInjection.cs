@@ -20,8 +20,11 @@ namespace WebGYM.Persistance
             services.AddDbContext<WebGymDbContext>(options =>
             {
                 options.UseNpgsql(connectionString);
+                
             });
             services.AddScoped<IWebGymContext>(provider => (IWebGymContext)provider.GetService<WebGymDbContext>());
+            
+            
             return services;
 
         }

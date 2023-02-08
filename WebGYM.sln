@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebGYM", "WebGYM\WebGYM.csproj", "{B682A153-0B44-466F-92E6-E644BF6CD925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebAPI", "WebGYM\WebAPI.csproj", "{B682A153-0B44-466F-92E6-E644BF6CD925}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ocelot API Gateway", "Ocelot API Gateway\Ocelot API Gateway.csproj", "{A5F668B7-3934-4D64-93DC-4916202914C3}"
 EndProject
