@@ -10,13 +10,13 @@ using WebGYM.Models;
 
 namespace WebGYM.Persistance
 {
-    public class DbContextClass : DbContext
+    public class WebGymDbContext : DbContext
     {
-        public DbSet<User> Users { get; set; }
+        public DbSet<Domain.Entities.User> Users { get; set; }
         public DbSet<Activition> Activitions { get; set; }
 
         protected readonly IConfiguration Configuration;
-        public DbContextClass(DbContextOptions<DbContextClass> options) :
+        public WebGymDbContext(DbContextOptions<WebGymDbContext> options) :
              base(options)
         {
 

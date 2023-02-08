@@ -8,7 +8,7 @@ namespace WebGYM.Persistance
 {
     public class DbInitializer
     {
-        public static void Initialize(DbContextClass context)
+        public static void Initialize(WebGymDbContext context)
         {
             context.Database.EnsureCreated();
         }

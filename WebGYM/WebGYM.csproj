@@ -28,7 +28,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebGYM.Application\WebGYM.Application.csproj" />
+    <ProjectReference Include="..\WebGYM.Domain\WebGYM.Domain.csproj" />
     <ProjectReference Include="..\WebGYM.Persistance\WebGYM.Persistance.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

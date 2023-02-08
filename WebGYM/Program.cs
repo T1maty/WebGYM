@@ -2,16 +2,13 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using WebGYM.Application.Common.Mappings;
 using WebGYM.Application.Interfaces;
-using WebGYM.Data;
+
 using WebGYM.Persistance;
-using WebGYM.Services;
-using WebGYM.Services.Interfaces;
+
 using WebGYM.Application;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
@@ -45,7 +42,7 @@ builder.Services.AddCors(options =>
 });
 
 
-builder.Services.AddDbContext<WebGYM.Data.DbContextClass>(
+builder.Services.AddDbContext<WebGymDbContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();

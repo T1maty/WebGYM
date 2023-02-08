@@ -11,7 +11,7 @@ namespace WebGYM.Application.Interfaces
 {
     public interface IWebGymContext
     {
-        DbSet<User> Users { get; set; }
+        DbSet<Domain.Entities.User> Users { get; set; }
         DbSet<Activition> Activitions { get; set; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);

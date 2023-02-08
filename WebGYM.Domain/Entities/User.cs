@@ -1,7 +1,7 @@
 ﻿using WebGYM.Domain.Entities;
 using WebGYM.Models;
 
-namespace WebGYM.Domain
+namespace WebGYM.Domain.Entities
 {
     public class User : BaseEntity
     {
