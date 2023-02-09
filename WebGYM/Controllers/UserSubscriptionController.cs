@@ -9,7 +9,7 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Route("user(notauth)")]
+    [Route("user-notauth")]
     public class UserSubscriptionController : ControllerBase
     {
         private readonly IMapper _mapper;

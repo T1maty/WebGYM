@@ -2,10 +2,11 @@ using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 using WebGYM.Application.Common.Mappings;
 using WebGYM.Application.Interfaces;
-
+using MediatR;
 using WebGYM.Persistance;
 
 using WebGYM.Application;
+using Microsoft.AspNetCore.Hosting;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +29,8 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile(new AssemblyMappingProfile(typeof(IWebGymContext).Assembly));
 });
 
+builder.Services.AddTransient<IMediator, Mediator>(); 
+
 
 
 
@@ -45,6 +48,7 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<WebGymDbContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+
 var app = builder.Build();
 
 
@@ -55,6 +59,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseRouting();
+
 app.UseCors("AllowAll");
 
 app.UseAuthorization();
