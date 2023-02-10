@@ -32,7 +32,7 @@ namespace WebAPI.Controllers
                 return UnprocessableEntity(ModelState);
             }
             var command = _mapper.Map<CreateUserCommand>(model);
-            await _mediator.Send(command);
+            //await _mediator.Send(command);
 
             return Ok();
         }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using MediatR;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +11,7 @@ using WebGYM.Domain.Entities;
 
 namespace WebGYM.Application.Gym.Queries
 {
-    public class UserDetailsVm : IMapWith<User>
+    public class UserDetailsVm : IRequest
     {
         public string? FirstName { get; set; }
         public string? LastName { get; set; }
