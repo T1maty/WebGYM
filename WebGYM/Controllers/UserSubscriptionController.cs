@@ -4,12 +4,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models.User;
 using WebGYM.Application.Gym.Commands.User.CreateUser;
+using WebGYM.Application.Gym.Commands.User.UpdateUser;
 
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Route("user")]
+  
     public class UserSubscriptionController : ControllerBase
     {
         private readonly IMapper _mapper;
@@ -37,6 +38,18 @@ namespace WebAPI.Controllers
             return Ok();
         }
 
-        [HttpPost ()]
+        [HttpGet ("update-subscription")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> UpdateSubscription([FromBody] UpdateUserModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return UnprocessableEntity(ModelState);
+            }
+            var command = _mapper.Map<UpdateUserCommand>(model);
+
+            return Ok();
+        }
     }
 }
