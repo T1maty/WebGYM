@@ -29,7 +29,7 @@ builder.Services.AddAutoMapper(config =>
     config.AddProfile(new AssemblyMappingProfile(typeof(IWebGymContext).Assembly));
 });
 
-builder.Services.AddTransient<IMediator, Mediator>(); 
+ 
 
 
 

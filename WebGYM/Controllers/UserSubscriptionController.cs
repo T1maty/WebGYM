@@ -9,11 +9,12 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Route("user-notauth")]
+    [Route("user")]
     public class UserSubscriptionController : ControllerBase
     {
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
+
         public UserSubscriptionController(IMapper mapper, IMediator mediator)
         {
             _mapper = mapper;
