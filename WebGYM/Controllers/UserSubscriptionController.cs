@@ -36,5 +36,7 @@ namespace WebAPI.Controllers
 
             return Ok();
         }
+
+        [HttpPost ()]
     }
 }
