@@ -26,6 +26,7 @@ namespace WebGYM.Application.Gym.Queries
                 opt => opt.MapFrom(user => user.FirstName))
                 .ForMember(userVm => userVm.LastName,
                 opt => opt.MapFrom(user => user.LastName));
+
         }
     }
 }

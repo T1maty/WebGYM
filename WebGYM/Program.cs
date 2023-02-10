@@ -14,6 +14,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddMediatR(typeof(Program));
 
 builder.Services.AddSwaggerGen(config =>
 {

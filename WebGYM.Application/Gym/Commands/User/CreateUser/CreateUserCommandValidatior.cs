@@ -12,7 +12,6 @@ namespace WebGYM.Application.Gym.Commands.User.CreateUser
         public CreateUserCommandValidatior()
         {
             RuleFor(CreateUserCommand => CreateUserCommand.FirstName).NotEmpty().MaximumLength(12);
-            RuleFor(CreateUserCommand => CreateUserCommand.UserId);
         }
     }
 }
