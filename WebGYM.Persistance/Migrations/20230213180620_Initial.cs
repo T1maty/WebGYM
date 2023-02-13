@@ -13,7 +13,7 @@ namespace WebGYM.Persistance.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Activitions",
+                name: "Actuals",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "integer", nullable: false)
@@ -26,7 +26,7 @@ namespace WebGYM.Persistance.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Activitions", x => x.Id);
+                    table.PrimaryKey("PK_Actuals", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -49,7 +49,7 @@ namespace WebGYM.Persistance.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Activitions");
+                name: "Actuals");
 
             migrationBuilder.DropTable(
                 name: "Users");

@@ -46,7 +46,7 @@ namespace WebGYM.Persistance.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WebGYM.Models.Activition", b =>
+            modelBuilder.Entity("WebGYM.Models.Actual", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -73,7 +73,7 @@ namespace WebGYM.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Activitions");
+                    b.ToTable("Actuals");
                 });
 #pragma warning restore 612, 618
         }

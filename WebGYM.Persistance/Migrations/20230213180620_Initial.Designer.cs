@@ -12,7 +12,7 @@ using WebGYM.Persistance;
 namespace WebGYM.Persistance.Migrations
 {
     [DbContext(typeof(WebGymDbContext))]
-    [Migration("20230208215921_Initial")]
+    [Migration("20230213180620_Initial")]
     partial class Initial
     {
         /// <inheritdoc />
@@ -49,7 +49,7 @@ namespace WebGYM.Persistance.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("WebGYM.Models.Activition", b =>
+            modelBuilder.Entity("WebGYM.Models.Actual", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -76,7 +76,7 @@ namespace WebGYM.Persistance.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Activitions");
+                    b.ToTable("Actuals");
                 });
 #pragma warning restore 612, 618
         }
