@@ -13,7 +13,7 @@ namespace WebGYM.Persistance
     public class WebGymDbContext : DbContext
     {
         public DbSet<Domain.Entities.User> Users { get; set; }
-        public DbSet<Activition> Activitions { get; set; }
+        public DbSet<Actual> Actuals { get; set; }
 
         protected readonly IConfiguration Configuration;
         public WebGymDbContext(DbContextOptions<WebGymDbContext> options) :
