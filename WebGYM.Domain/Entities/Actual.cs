@@ -2,7 +2,7 @@
 
 namespace WebGYM.Models
 {
-    public class Activition : BaseEntity
+    public class Actual : BaseEntity
     {
         public string? Category { get; set; }
         public TimeSpan Duration { get; set; }
