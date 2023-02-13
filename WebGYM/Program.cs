@@ -19,9 +19,11 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddOptions();
 
-
+//DI 
 builder.Services.AddScoped<ISubscriptionSevice, SubscriptionService>();
 
+
+//Add XML file to swagger
 builder.Services.AddSwaggerGen(config =>
 {
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
@@ -29,7 +31,7 @@ builder.Services.AddSwaggerGen(config =>
     config.IncludeXmlComments(xmlPath);
 });
 
-
+//Settings Automapper
 builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
@@ -40,7 +42,7 @@ builder.Services.AddAutoMapper(config =>
 
 
 
-
+//Settings CORS
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
@@ -64,7 +66,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
+//Middleware 
 app.UseHttpsRedirection();
 
 app.UseRouting();
