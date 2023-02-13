@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models.User;
+using WebAPI.Service.Interfaces;
 using WebGYM.Application.Gym.Commands.User.CreateUser;
 using WebGYM.Application.Gym.Commands.User.UpdateUser;
 
@@ -15,11 +16,12 @@ namespace WebAPI.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
-
-        public UserSubscriptionController(IMapper mapper, IMediator mediator)
+        private readonly ISubscriptionSevice _subscriptionservice;
+        public UserSubscriptionController(IMapper mapper, IMediator mediator, ISubscriptionSevice subscriptionSevice)
         {
             _mapper = mapper;
             _mediator = mediator;
+            _subscriptionservice = subscriptionSevice;
         }
 
         [HttpPost("create-subscription")]
@@ -50,6 +52,21 @@ namespace WebAPI.Controllers
             var command = _mapper.Map<UpdateUserCommand>(model);
 
             return Ok();
+        }
+        /// <summary>
+        /// Deletes user by specified id
+        /// </summary>
+        /// <param name="id">User id</param>
+        /// <returns>Result of deletion</returns>
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public ActionResult DeleteSubscription(int id)
+        {
+            var result = _subscriptionservice.DeleteSubscription(id);
+            return StatusCode((int)result.StatusCode, result);
         }
     }
 }

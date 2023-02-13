@@ -7,6 +7,8 @@ using WebGYM.Persistance;
 
 using WebGYM.Application;
 using Microsoft.AspNetCore.Hosting;
+using WebAPI.Service.Interfaces;
+using WebAPI.Service;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,6 +18,9 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplication();
 builder.Services.AddOptions();
+
+
+builder.Services.AddScoped<ISubscriptionSevice, SubscriptionService>();
 
 builder.Services.AddSwaggerGen(config =>
 {
