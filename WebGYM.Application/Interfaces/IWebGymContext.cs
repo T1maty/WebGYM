@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WebGYM.Domain;
+using WebGYM.Domain.Entities;
 using WebGYM.Models;
 
 namespace WebGYM.Application.Interfaces
@@ -13,6 +14,7 @@ namespace WebGYM.Application.Interfaces
     {
         DbSet<Domain.Entities.User> Users { get; set; }
         DbSet<Actual> Actuals { get; set; }
+        DbSet<SportClub> SportClubs { get; set; }
         
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
