@@ -17,5 +17,9 @@ namespace WebAPI.Controllers
             _mediator = mediator;
             _mapper = mapper;
         }
+
+        [HttpGet("choice-of-sportclub")]
+
+
     }
 }
