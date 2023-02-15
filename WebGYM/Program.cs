@@ -21,7 +21,7 @@ builder.Services.AddOptions();
 
 //DI 
 builder.Services.AddScoped<ISubscriptionSevice, SubscriptionService>();
-
+builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
 
 //Add XML file to swagger
 builder.Services.AddSwaggerGen(config =>
