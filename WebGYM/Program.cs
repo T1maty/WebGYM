@@ -9,8 +9,19 @@ using WebGYM.Application;
 using Microsoft.AspNetCore.Hosting;
 using WebAPI.Service.Interfaces;
 using WebAPI.Service;
+using Serilog;
+using Serilog.Events;
 
 var builder = WebApplication.CreateBuilder(args);
+
+Log.Logger = new LoggerConfiguration()
+    .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
+    .WriteTo.File("WebAppUserLog.txt", rollingInterval:
+    RollingInterval.Day)
+    .CreateLogger();
+
+
+
 
 builder.Services.AddControllers();
 
@@ -21,7 +32,9 @@ builder.Services.AddOptions();
 
 //DI 
 builder.Services.AddScoped<ISubscriptionSevice, SubscriptionService>();
-builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
+builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>(); 
+
+builder.Services.AddHttpContextAccessor();
 
 //Add XML file to swagger
 builder.Services.AddSwaggerGen(config =>

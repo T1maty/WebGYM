@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using WebGYM.Application.Behaviors;
 
 namespace WebGYM.Application
 {
@@ -15,6 +16,8 @@ namespace WebGYM.Application
         {
             services.AddMediatR(Assembly.GetExecutingAssembly());
 
+            services.AddTransient(typeof(IPipelineBehavior<,>),
+                typeof(LoggingBehavior<,>));
             return services;
         }
     }
