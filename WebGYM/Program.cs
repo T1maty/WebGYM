@@ -12,6 +12,7 @@ using WebAPI.Service;
 using Serilog;
 using Serilog.Events;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 Log.Logger = new LoggerConfiguration()
@@ -48,6 +49,11 @@ builder.Services.AddSwaggerGen(config =>
     var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
     var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
     config.IncludeXmlComments(xmlPath);
+});
+
+builder.Host.UseSerilog((context, config) =>
+{
+    config.WriteTo.Console();
 });
 
 //Settings Automapper
