@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Caching.Distributed;
 using WebAPI.Models.User;
 using WebAPI.Service.Interfaces;
 using WebGYM.Application.Gym.Commands.User.CreateUser;
@@ -17,11 +18,13 @@ namespace WebAPI.Controllers
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
         private readonly ISubscriptionSevice _subscriptionservice;
-        public UserSubscriptionController(IMapper mapper, IMediator mediator, ISubscriptionSevice subscriptionSevice)
+        private readonly IDistributedCache _cache;
+        public UserSubscriptionController(IMapper mapper, IMediator mediator, ISubscriptionSevice subscriptionSevice, IDistributedCache cache)
         {
             _mapper = mapper;
             _mediator = mediator;
             _subscriptionservice = subscriptionSevice;
+            _cache = cache;
         }
 
         [HttpPost("create-subscription")]
