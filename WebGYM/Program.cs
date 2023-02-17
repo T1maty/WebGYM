@@ -22,6 +22,12 @@ Log.Logger = new LoggerConfiguration()
 
 
 
+builder.Services.AddStackExchangeRedisCache(options =>
+{
+    options.Configuration = builder.Configuration.GetConnectionString("Redis");
+    options.InstanceName = "RedisWebGym_";
+});
+
 
 builder.Services.AddControllers();
 
