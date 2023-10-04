@@ -11,7 +11,7 @@ using WebAPI.Service.Interfaces;
 using WebAPI.Service;
 using Serilog;
 using Serilog.Events;
-
+using WebAPI.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -39,7 +39,13 @@ builder.Services.AddOptions();
 
 //DI 
 builder.Services.AddScoped<ISubscriptionSevice, SubscriptionService>();
-builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>(); 
+builder.Services.AddSingleton<ICurrentUserService, CurrentUserService>();
+
+//MongoDB Service
+builder.Services.Configure<MongoDBSettings>(builder.Configuration.GetSection("MongoDB"));
+builder.Services.AddSingleton<MongoDBService>();
+
+
 
 builder.Services.AddHttpContextAccessor();
 
@@ -79,8 +85,8 @@ builder.Services.AddCors(options =>
 });
 
 
-builder.Services.AddDbContext<WebGymDbContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+//builder.Services.AddDbContext<WebGymDbContext>(
+  //  o => o.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 
 var app = builder.Build();

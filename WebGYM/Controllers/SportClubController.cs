@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Models.SportClub;
+using WebAPI.Service;
 using WebGYM.Application.CQRS.Commands.SportClub.CreateSportClub;
 
 namespace WebAPI.Controllers
@@ -13,11 +14,13 @@ namespace WebAPI.Controllers
     {
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
+        private readonly MongoDBService _db;
 
-        public SportClubController(IMediator mediator, IMapper mapper)
+        public SportClubController(IMediator mediator, IMapper mapper, MongoDBService mongoDBService)
         {
             _mediator = mediator;
             _mapper = mapper;
+            _db = mongoDBService; 
         }
 
         [HttpPost("choice-of-sportclub")]
